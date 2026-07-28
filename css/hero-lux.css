@@ -1,0 +1,480 @@
+/* ============ Golden Hive — cinematic full-bleed hero + transparent navbar ============ */
+
+:root {
+  --lux-ink:    #170D03;
+  --lux-ink-2:  #2B1803;
+  --lux-cream:  #FFF6E3;
+  --lux-sand:   #E8D5AC;
+  --lux-gold:   #F2A900;
+  --lux-gold-2: #FFC533;
+}
+
+/* ---------- Navbar: transparent over the hero, cream once scrolled ---------- */
+.site-header {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-header.scrolled {
+  background: rgba(255, 251, 242, .88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header:not(.scrolled) .brand-text,
+.site-header:not(.scrolled) .main-nav a,
+.site-header:not(.scrolled) .header-phone,
+.site-header:not(.scrolled) .cart-btn { color: var(--lux-cream); }
+
+.site-header:not(.scrolled) .brand-text small,
+.site-header:not(.scrolled) .header-phone svg { color: var(--lux-gold-2); }
+
+.site-header:not(.scrolled) .brand-mark path:first-child { stroke: var(--lux-gold); }
+
+.site-header:not(.scrolled) .nav-toggle span { background: var(--lux-cream); }
+
+/* the open mobile menu overlay is cream — keep the ✕ dark on it */
+.nav-toggle[aria-expanded="true"] span { background: var(--cocoa) !important; }
+
+/* mobile menu links must stay dark on the cream overlay even at top */
+.site-header:not(.scrolled) .main-nav.open a { color: var(--cocoa); }
+.site-header:not(.scrolled) .main-nav.open .nav-phone { color: var(--honey-deep); }
+
+/* ---------- Cart button ---------- */
+.cart-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 18px;
+  color: var(--cocoa);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background .25s, transform .2s var(--ease-out);
+}
+
+.cart-btn:hover { background: rgba(242, 169, 0, .16); transform: translateY(-1px); }
+.cart-btn svg { width: 23px; height: 23px; }
+
+.cart-count {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--lux-gold-2), var(--lux-gold));
+  color: var(--lux-ink);
+  font-size: .66rem;
+  font-weight: 800;
+  line-height: 17px;
+  text-align: center;
+}
+
+/* ---------- Hero shell ---------- */
+.hero-lux {
+  position: relative;
+  min-height: 86svh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 120px;
+  margin-top: calc(-1 * (44px + 72px)); /* sit under the transparent sticky header */
+  background: var(--lux-ink);
+  color: var(--lux-sand);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ---------- Background: full-bleed photo + honeycomb + golden lighting ---------- */
+.hero-lux-bg { position: absolute; inset: 0; z-index: -1; }
+
+.hero-lux-zoom {
+  position: absolute;
+  inset: -5%;
+  background: radial-gradient(120% 90% at 75% 40%, #3A2306 0%, #241503 50%, var(--lux-ink) 100%);
+  will-change: transform;
+}
+
+.hero-lux-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% 42%; /* keep the jar & dipper on the right */
+}
+
+.hero-comb-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .1;
+  filter: blur(5px);
+  mix-blend-mode: screen;
+}
+
+/* left-to-right shade so the copy stays readable over the photo */
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(23, 13, 3, .96) 0%,
+      rgba(23, 13, 3, .88) 30%,
+      rgba(23, 13, 3, .55) 52%,
+      rgba(23, 13, 3, .12) 78%,
+      rgba(23, 13, 3, .3) 100%),
+    linear-gradient(180deg, rgba(23, 13, 3, .65) 0%, rgba(23, 13, 3, 0) 26%);
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.hero-glow-a {
+  width: 560px; height: 560px;
+  right: 2%; top: 12%;
+  background: radial-gradient(circle, rgba(242, 169, 0, .30) 0%, rgba(242, 169, 0, 0) 70%);
+}
+
+.hero-glow-b {
+  width: 420px; height: 420px;
+  left: -8%; bottom: -14%;
+  background: radial-gradient(circle, rgba(217, 119, 6, .22) 0%, rgba(217, 119, 6, 0) 70%);
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(130% 105% at 50% 45%, rgba(23, 13, 3, 0) 60%, rgba(23, 13, 3, .5) 100%);
+}
+
+/* ---------- Golden particles ---------- */
+.hero-lux-particles { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+
+.lux-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFE79A 0%, var(--lux-gold) 55%, rgba(242, 169, 0, 0) 100%);
+  box-shadow: 0 0 12px 2px rgba(255, 197, 51, .5);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* ---------- Layout ---------- */
+.hero-lux-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: clamp(32px, 4.5vw, 70px);
+  align-items: center;
+}
+
+.hero-lux-copy { position: relative; }
+
+/* ---------- Right visual: jar + honeycomb bites ---------- */
+.hero-lux-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  will-change: transform;
+}
+
+.jar-halo {
+  position: absolute;
+  width: 110%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 169, 0, .3) 0%, rgba(242, 169, 0, .08) 45%, transparent 70%);
+  filter: blur(26px);
+  animation: haloPulse 6s ease-in-out infinite;
+}
+
+@keyframes haloPulse {
+  0%, 100% { opacity: .8; transform: scale(1); }
+  50%      { opacity: 1;  transform: scale(1.05); }
+}
+
+.jar-lux {
+  position: relative;
+  margin: 0;
+  width: min(100%, 400px);
+  border-radius: 200px 200px 30px 30px;
+  overflow: hidden;
+  border: 1px solid rgba(242, 169, 0, .4);
+  box-shadow:
+    0 50px 100px -36px rgba(0, 0, 0, .8),
+    0 22px 54px -18px rgba(242, 169, 0, .3),
+    inset 0 0 0 1px rgba(255, 246, 227, .06);
+  animation: jarFloat 8s ease-in-out infinite;
+}
+
+@keyframes jarFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+.jar-lux img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9/10;
+  object-fit: cover;
+  display: block;
+}
+
+.jar-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(115deg, rgba(255, 246, 227, .2) 0%, transparent 26%),
+    linear-gradient(-70deg, rgba(255, 216, 115, .12) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+.comb-bite {
+  position: absolute;
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, .45));
+  animation: jarFloat 8s ease-in-out infinite;
+}
+
+.comb-bite-1 {
+  width: clamp(96px, 10vw, 140px);
+  left: -4%;
+  bottom: 2%;
+  transform: rotate(-9deg);
+  animation-delay: .9s;
+}
+
+.comb-bite-2 {
+  width: clamp(70px, 7vw, 100px);
+  right: -3%;
+  top: 9%;
+  transform: rotate(11deg);
+  animation-delay: 1.6s;
+}
+
+.hero-lux h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.015em;
+  color: var(--lux-cream);
+  margin: 0 0 20px;
+  max-width: 20ch;
+}
+
+.hero-lux h1 em {
+  font-style: normal;
+  background: linear-gradient(100deg, #FFD873 10%, var(--lux-gold) 55%, #E08A00 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-lux-sub {
+  font-size: 1.14rem;
+  line-height: 1.7;
+  color: var(--lux-sand);
+  max-width: 44ch;
+  margin: 0 0 32px;
+}
+
+/* ---------- CTAs ---------- */
+.hero-cta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 34px; }
+
+.hero-cta .btn svg { width: 18px; height: 18px; }
+
+.btn-ghost {
+  color: var(--lux-cream);
+  background: rgba(255, 246, 227, .04);
+  border: 1.5px solid rgba(242, 169, 0, .55);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--lux-gold-2);
+  background: rgba(242, 169, 0, .12);
+  box-shadow: 0 14px 30px -14px rgba(242, 169, 0, .45);
+}
+
+.btn-ghost:active { transform: translateY(0) scale(.98); }
+
+/* ---------- Trust strip (icon cards) ---------- */
+.trust-strip {
+  list-style: none;
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  background: rgba(23, 13, 3, .62);
+  border: 1px solid rgba(242, 169, 0, .3);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.trust-strip li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 26px;
+}
+
+.trust-strip li + li { border-left: 1px solid rgba(242, 169, 0, .22); }
+
+.trust-strip svg {
+  width: 26px;
+  height: 26px;
+  color: var(--lux-gold-2);
+  flex: none;
+}
+
+.trust-strip strong {
+  display: block;
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--lux-cream);
+  line-height: 1.25;
+}
+
+.trust-strip small {
+  font-size: .78rem;
+  color: rgba(232, 213, 172, .75);
+}
+
+/* ---------- Wavy bottom edge ---------- */
+.hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: clamp(60px, 9vw, 130px);
+  z-index: 2;
+  filter: drop-shadow(0 -8px 18px rgba(242, 169, 0, .18));
+}
+
+/* ---------- Stats band (white, below the wave) ---------- */
+.hero-stats-band {
+  background: #FFFFFF;
+  padding: 34px 0 40px;
+}
+
+.hero-band-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-block: 0;
+  margin: 0;
+}
+
+.hero-band-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero-band-list li + li { border-left: 1px solid var(--line); }
+
+.hero-band-list svg {
+  width: 40px;
+  height: 40px;
+  color: var(--honey-deep);
+  flex: none;
+}
+
+.hero-band-list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--cocoa);
+}
+
+.hero-band-list span {
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--cocoa-soft);
+}
+
+/* ---------- Hero entrance ----------
+   Hidden from the very first paint (not gated behind a JS-added class), so
+   there is never a "visible → snap invisible → fade back in" flash while
+   scripts load. A tiny dependency-free script in hero-lux.js adds .hero-in
+   almost immediately; this never waits on the optional GSAP CDN script. */
+[data-hero-up] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s cubic-bezier(.22,.8,.3,1), transform .7s cubic-bezier(.22,.8,.3,1);
+}
+[data-hero-up].hero-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .hero-lux { padding: 130px 0 108px; min-height: 0; }
+
+  .hero-lux-grid { grid-template-columns: 1fr; }
+
+  .hero-lux-visual {
+    order: -1;
+    max-width: 300px;
+    margin-inline: auto;
+    margin-bottom: 8px;
+  }
+
+  .hero-lux-photo { object-position: 66% 40%; }
+
+  .hero-shade {
+    background:
+      linear-gradient(180deg,
+        rgba(23, 13, 3, .9) 0%,
+        rgba(23, 13, 3, .68) 45%,
+        rgba(23, 13, 3, .45) 70%,
+        rgba(23, 13, 3, .6) 100%);
+  }
+
+  .trust-strip { display: grid; grid-template-columns: 1fr; }
+  .trust-strip li + li { border-left: 0; border-top: 1px solid rgba(242, 169, 0, .22); }
+
+  .hero-band-list { grid-template-columns: repeat(2, 1fr); gap: 22px 0; }
+  .hero-band-list li { justify-content: flex-start; padding-left: 8vw; }
+  .hero-band-list li:nth-child(3) { border-left: 0; }
+
+  .cart-btn { margin-left: auto; }
+  .nav-toggle { margin-left: 0; }
+}
+
+@media (max-width: 560px) {
+  .brand-text { font-size: 1.02rem; }
+  .brand-text small { letter-spacing: .2em; white-space: nowrap; }
+  .cart-btn { margin-left: auto; }
+  .hero-lux { padding: 122px 0 96px; }
+  .hero-lux-visual { max-width: 250px; }
+  .hero-lux-sub { font-size: 1rem; }
+  .hero-cta .btn { flex: 1 1 100%; }
+  .trust-strip { width: 100%; }
+  .hero-band-list li { padding-left: 4vw; gap: 12px; }
+  .hero-band-list svg { width: 32px; height: 32px; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-up] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .lux-particle { display: none; }
+  .jar-lux, .jar-halo, .comb-bite { animation: none !important; }
+}

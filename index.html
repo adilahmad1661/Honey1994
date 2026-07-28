@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Hive — Raw Honey from a Private Apiary</title>
+  <meta name="description" content="Golden Hive is a family-run private apiary crafting raw, unfiltered honey. No sugar, no additives — just honey the way bees made it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=9">
+  <link rel="stylesheet" href="css/sections.css?v=9">
+  <link rel="stylesheet" href="css/hero-lux.css?v=9">
+  <link rel="stylesheet" href="css/about-delivery.css?v=9">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍯</text></svg>">
+</head>
+<body>
+
+  <!-- ======= HONEY DRIP LAYER (top of page, like the reference) ======= -->
+  <div class="honey-drips" aria-hidden="true">
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" class="drip-svg">
+      <defs>
+        <linearGradient id="honeyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"  stop-color="#E8940D"/>
+          <stop offset="45%" stop-color="#D97706"/>
+          <stop offset="100%" stop-color="#A85B06"/>
+        </linearGradient>
+        <linearGradient id="honeyShine" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"  stop-color="#FFCF5C" stop-opacity=".75"/>
+          <stop offset="100%" stop-color="#FFCF5C" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <!-- long drips only fall in the gaps; nav titles & phone stay clear -->
+      <path fill="url(#honeyGrad)" d="M0,0 L1440,0 L1440,18
+        C1408,20 1400,34 1384,34 C1368,34 1364,19 1340,18
+        C1312,17 1306,26 1290,26 C1274,26 1270,17 1248,16
+        C1216,15 1210,28 1188,28 C1166,28 1162,18 1136,17
+        C1108,16 1104,30 1088,30 C1072,30 1068,16 1044,15
+        C1016,14 1012,92 996,92 C980,92 976,15 952,14
+        C920,13 916,28 900,28 C884,28 880,14 856,14
+        C824,14 820,34 802,34 C784,34 780,15 756,14
+        C724,13 720,26 704,26 C688,26 684,14 660,13
+        C628,12 624,32 606,32 C588,32 584,14 560,13
+        C528,12 524,24 508,24 C492,24 488,13 464,12
+        C432,11 428,88 406,88 C384,88 382,16 356,15
+        C324,14 320,30 304,30 C288,30 284,14 260,13
+        C228,12 224,70 202,70 C180,70 178,15 152,14
+        C120,13 116,40 100,40 C84,40 80,14 56,13
+        C36,12 20,22 0,20 Z"/>
+      <path fill="url(#honeyShine)" opacity=".3" d="M0,0 L1440,0 L1440,9 L0,9 Z"/>
+    </svg>
+    <span class="falling-drop" style="--drop-x:26%; --drop-delay:0s;"></span>
+    <span class="falling-drop" style="--drop-x:68.5%; --drop-delay:4.2s;"></span>
+    <span class="falling-drop" style="--drop-x:93%; --drop-delay:8.6s;"></span>
+  </div>
+
+  <!-- ======= HEADER ======= -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Golden Hive — home">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 6l14 8v16l-14 8-14-8V14l14-8z" stroke="#B45309" stroke-width="2.6" stroke-linejoin="round"/>
+          <path d="M24 14c3.6 0 6 2.6 6 6.4 0 5-3.8 8.6-6 10.6-2.2-2-6-5.6-6-10.6 0-3.8 2.4-6.4 6-6.4z" fill="#F2A900"/>
+          <path d="M19.3 19h9.4M18.9 23.4h10.2M20.4 27.6h7.2" stroke="#3B2205" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M17 12.5c-2-1.4-2.6-3-2.2-4.5M31 12.5c2-1.4 2.6-3 2.2-4.5" stroke="#B45309" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text"><strong>Golden</strong> Hive<small>private apiary</small></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="#catalog">Catalog</a>
+        <a href="#about">About us</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contacts">Contacts</a>
+        <a href="tel:+15550104664" class="nav-phone mobile-only">+1 (555) 010-4664</a>
+      </nav>
+
+      <a href="tel:+15550104664" class="header-phone desktop-only">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.27a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2.02z"/></svg>
+        +1 (555) 010-4664
+      </a>
+
+      <a href="#catalog" class="cart-btn" aria-label="Cart, 2 items">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/>
+          <path d="M2.5 3.5h3l2.6 12.2a1.6 1.6 0 0 0 1.6 1.3h8.9a1.6 1.6 0 0 0 1.6-1.3L21.9 8H6.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="cart-count">2</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======= HERO (cinematic, full-bleed) ======= -->
+    <section class="hero-lux" id="heroLux">
+      <div class="hero-lux-bg" aria-hidden="true">
+        <div class="hero-lux-zoom">
+          <img class="hero-lux-photo"
+               src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1800&q=82"
+               alt="" width="1800" height="1200" fetchpriority="high">
+          <svg class="hero-comb-bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="hexPat" width="104" height="120" patternUnits="userSpaceOnUse">
+                <path d="M52 2 L100 30 V86 L52 114 L4 86 V30 Z M52 62 L100 90 V146 L52 174 L4 146 V90 Z"
+                      fill="none" stroke="#F2A900" stroke-width="2.5"/>
+              </pattern>
+            </defs>
+            <rect width="1200" height="800" fill="url(#hexPat)"/>
+          </svg>
+        </div>
+        <span class="hero-shade"></span>
+        <span class="hero-glow hero-glow-a"></span>
+        <span class="hero-glow hero-glow-b"></span>
+        <span class="hero-vignette"></span>
+      </div>
+
+      <div class="hero-lux-particles" id="heroParticles" aria-hidden="true"></div>
+
+      <div class="container hero-lux-grid">
+        <div class="hero-lux-copy" id="heroCopy">
+        <h1 data-hero-up>Pure Nature.<br><em>Golden</em> Perfection.</h1>
+        <p class="hero-lux-sub" data-hero-up>Raw wildflower honey with cedar nuts.<br>
+          No sugar. No additives. Ever.</p>
+
+        <div class="hero-cta" data-hero-up>
+          <a class="btn btn-honey" href="#catalog">Shop Honey
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#catalog">Explore Collection</a>
+        </div>
+
+        <ul class="trust-strip" data-hero-up>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 4c-9 0-14 5-14 11 0 2.5 1.5 5 1.5 5S9 21 12 21c6 0 8-6 8-17z" stroke-linejoin="round"/><path d="M6.5 19.5C9 14 13 10.5 17 8.5" stroke-linecap="round"/></svg>
+            <div><strong>100% Organic</strong><small>All natural</small></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3s-6.5 7-6.5 11.5a6.5 6.5 0 0 0 13 0C18.5 10 12 3 12 3z" stroke-linejoin="round"/><path d="M9.5 15.5a3 3 0 0 0 2.5 2.9" stroke-linecap="round"/></svg>
+            <div><strong>Raw &amp; Unfiltered</strong><small>Pure goodness</small></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="3"/><path d="M8 8V6.2A1.2 1.2 0 0 1 9.2 5h5.6A1.2 1.2 0 0 1 16 6.2V8M6 13.5h12" stroke-linecap="round"/></svg>
+            <div><strong>No Additives</strong><small>Just honey</small></div>
+          </li>
+        </ul>
+        </div>
+
+        <div class="hero-lux-visual" id="heroJar">
+          <span class="jar-halo" aria-hidden="true"></span>
+          <figure class="jar-lux">
+            <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=900&q=82"
+                 alt="Glass jar of raw amber honey tied with rustic twine, glowing in warm light"
+                 width="900" height="1100" fetchpriority="high">
+            <span class="jar-sheen" aria-hidden="true"></span>
+          </figure>
+          <svg class="comb-bite comb-bite-1" viewBox="0 0 150 130" aria-hidden="true">
+            <defs>
+              <linearGradient id="combG1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFC533"/><stop offset="100%" stop-color="#C9720A"/>
+              </linearGradient>
+            </defs>
+            <g stroke="#8A4E06" stroke-width="3" stroke-linejoin="round">
+              <path d="M40 8l26 15v30l-26 15-26-15V23l26-15z" fill="url(#combG1)"/>
+              <path d="M96 22l26 15v30l-26 15-26-15V37l26-15z" fill="url(#combG1)"/>
+              <path d="M68 58l26 15v30l-26 15-26-15V73l26-15z" fill="url(#combG1)"/>
+            </g>
+            <g fill="#9C5A08" opacity=".55">
+              <path d="M40 22l13 7.5v15L40 52l-13-7.5v-15L40 22zM96 36l13 7.5v15L96 66l-13-7.5v-15L96 36zM68 72l13 7.5v15L68 102l-13-7.5v-15L68 72z"/>
+            </g>
+            <ellipse cx="47" cy="20" rx="7" ry="3.4" fill="#FFE29A" opacity=".8" transform="rotate(-18 47 20)"/>
+            <ellipse cx="102" cy="34" rx="6" ry="3" fill="#FFE29A" opacity=".7" transform="rotate(-18 102 34)"/>
+          </svg>
+          <svg class="comb-bite comb-bite-2" viewBox="0 0 110 100" aria-hidden="true">
+            <g stroke="#8A4E06" stroke-width="3" stroke-linejoin="round">
+              <path d="M34 6l22 13v26L34 58 12 45V19L34 6z" fill="url(#combG1)"/>
+              <path d="M78 34l22 13v26L78 86 56 73V47l22-13z" fill="url(#combG1)"/>
+            </g>
+            <g fill="#9C5A08" opacity=".55">
+              <path d="M34 18l11 6.5v13L34 44l-11-6.5v-13L34 18zM78 46l11 6.5v13L78 72l-11-6.5v-13L78 46z"/>
+            </g>
+            <ellipse cx="40" cy="17" rx="6" ry="2.8" fill="#FFE29A" opacity=".8" transform="rotate(-18 40 17)"/>
+          </svg>
+        </div>
+      </div>
+
+      <svg class="hero-wave" viewBox="0 0 1440 130" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,70 C180,110 340,30 540,52 C740,74 860,116 1060,92 C1220,73 1330,38 1440,58 L1440,130 L0,130 Z" fill="#FFFFFF"/>
+        <path d="M0,70 C180,110 340,30 540,52 C740,74 860,116 1060,92 C1220,73 1330,38 1440,58" fill="none" stroke="#F2A900" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+      </svg>
+    </section>
+
+    <!-- hero stats band (part of the hero composition) -->
+    <div class="hero-stats-band">
+      <ul class="container hero-band-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20.5S4 15.5 4 9.8A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 8 2.8c0 5.7-8 10.7-8 10.7z" stroke-linejoin="round"/></svg>
+          <div><strong data-count="200">0</strong><span>Happy Customers</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 20h10M7.5 20l-1-3h11l-1 3M5.5 14h13M6 14l-.8-3h13.6l-.8 3M7.5 8h9l1 3h-11l1-3z" stroke-linejoin="round"/><path d="M10 8V6.4A2 2 0 0 1 12 4.5a2 2 0 0 1 2 1.9V8" stroke-linecap="round"/></svg>
+          <div><strong data-count="38">0</strong><span>Bee Colonies</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6.5" y="7" width="11" height="13" rx="2.8"/><path d="M8.5 7V5.8A1.3 1.3 0 0 1 9.8 4.5h4.4a1.3 1.3 0 0 1 1.3 1.3V7M6.5 12.5h11" stroke-linecap="round"/></svg>
+          <div><strong data-count="12">0</strong><span>Honey Varieties</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.9L12 3.5z" stroke-linejoin="round"/></svg>
+          <div><strong class="band-rating">4.9</strong><span>Average Rating</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ======= CATALOG ======= -->
+    <section class="section catalog" id="catalog">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our catalog</span>
+          <h2>Honey for every taste</h2>
+          <p>Harvested in small batches, cold-extracted and poured by hand — each variety keeps the character of the meadow it came from.</p>
+        </div>
+
+        <div class="product-grid" id="productGrid"><!-- cards injected by js/products.js --></div>
+      </div>
+    </section>
+
+    <!-- ======= RIBBON ======= -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>100% raw &amp; unfiltered</span><i>✦</i><span>No sugar added</span><i>✦</i><span>Cold-extracted</span><i>✦</i><span>Family apiary since 1987</span><i>✦</i>
+        <span>100% raw &amp; unfiltered</span><i>✦</i><span>No sugar added</span><i>✦</i><span>Cold-extracted</span><i>✦</i><span>Family apiary since 1987</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ======= ABOUT ======= -->
+    <section class="section about-lux" id="about">
+      <div class="ad-hex-bg" aria-hidden="true"></div>
+
+      <!-- decorative bee with flight trail -->
+      <svg class="ad-bee ad-bee-about" viewBox="0 0 150 90" aria-hidden="true">
+        <path d="M4 78 C40 82 58 46 92 40 C116 36 128 22 132 10" fill="none" stroke="#D9A441"
+              stroke-width="1.6" stroke-dasharray="4 6" stroke-linecap="round" opacity=".55"/>
+        <g class="ad-bee-body" transform="translate(126 4)">
+          <ellipse cx="12" cy="12" rx="9.5" ry="7" fill="#F2A900"/>
+          <path d="M7 6.5q2.4 5.5 0 11M12 5.6q2.6 6.4 0 12.8M17 7q2.2 5 0 10" stroke="#3B2205" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <circle cx="2.6" cy="10.6" r="4.4" fill="#3B2205"/>
+          <path d="M1 6.6q-3-3.4-5.6-4M4 5.6q-1.4-3.6-4-5" stroke="#3B2205" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <ellipse cx="10" cy="2.6" rx="7.6" ry="4" fill="#FFF9E8" opacity=".9" transform="rotate(-16 10 2.6)"/>
+        </g>
+      </svg>
+
+      <div class="container about-lux-grid">
+        <!-- LEFT: image collage -->
+        <div class="about-collage reveal-scale">
+          <figure class="ac-main">
+            <img src="https://images.unsplash.com/photo-1473973266408-ed4e27abdd47?auto=format&fit=crop&w=900&q=78"
+                 alt="Beekeeper in a protective suit lifting a honeycomb frame from a hive"
+                 width="900" height="760" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="ac-hex ac-hex-1">
+            <img src="https://images.unsplash.com/photo-1568526381923-caf3fd520382?auto=format&fit=crop&w=420&q=78"
+                 alt="A honeybee collecting nectar from a flower"
+                 width="420" height="420" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="ac-hex ac-hex-2">
+            <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=420&q=78"
+                 alt="A glass jar of golden honey beside fresh honeycomb"
+                 width="420" height="420" loading="lazy" decoding="async">
+          </figure>
+
+          <div class="ac-badge">
+            <span>Family<br>Apiary<br>Since<br><strong>1987</strong></span>
+            <svg viewBox="0 0 24 16" aria-hidden="true">
+              <ellipse cx="13" cy="9" rx="6" ry="4.4" fill="#F2A900"/>
+              <path d="M9.6 5.2q1.6 3.8 0 7.6M13 4.7q1.8 4.3 0 8.6M16.4 5.6q1.5 3.4 0 6.8" stroke="#3B2205" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+              <circle cx="5.4" cy="8" r="2.9" fill="#3B2205"/>
+              <ellipse cx="11.4" cy="2.6" rx="5" ry="2.6" fill="#FFF9E8" opacity=".95" transform="rotate(-16 11.4 2.6)"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- RIGHT: copy -->
+        <div class="about-lux-copy">
+          <span class="eyebrow reveal">About us</span>
+          <h2 class="reveal">Three generations<br>of beekeepers</h2>
+          <div class="gold-rule reveal" aria-hidden="true"><i></i><b></b><i></i></div>
+          <p class="reveal">Golden Hive began in 1987 with six hives behind a family orchard. Today our apiary is home to more than two hundred colonies that roam flowering meadows far from roads and industry.</p>
+          <p class="reveal">We never heat, blend or filter our honey. Every jar is traceable to the exact yard — and the exact week — it was harvested.</p>
+
+          <ul class="about-features">
+            <li class="reveal" style="--d:.05s">
+              <span class="af-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 4c-9 0-14 5-14 11 0 2.5 1.5 5 1.5 5S9 21 12 21c6 0 8-6 8-17z" stroke-linejoin="round"/><path d="M6.5 19.5C9 14 13 10.5 17 8.5" stroke-linecap="round"/></svg></span>
+              <strong>100% Natural</strong><small>Raw &amp; unfiltered</small>
+            </li>
+            <li class="reveal" style="--d:.12s">
+              <span class="af-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3l7.5 3v5.6c0 4.6-3.1 7.9-7.5 9.4-4.4-1.5-7.5-4.8-7.5-9.4V6L12 3z" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.2-4.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <strong>Sustainably Harvested</strong><small>Bee-friendly practices</small>
+            </li>
+            <li class="reveal" style="--d:.19s">
+              <span class="af-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.8"/></svg></span>
+              <strong>Local &amp; Traceable</strong><small>From our hives to your table</small>
+            </li>
+            <li class="reveal" style="--d:.26s">
+              <span class="af-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.2 19.5a5.8 5.8 0 0 1 11.6 0" stroke-linecap="round"/><path d="M16 5.6a3.2 3.2 0 0 1 0 5.9M17.6 19.5a5.8 5.8 0 0 0-2.2-4.6" stroke-linecap="round"/></svg></span>
+              <strong>Family Owned</strong><small>Passion in every jar we pack</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== OUR JOURNEY timeline ===== -->
+      <div class="container journey">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our journey</span>
+          <h3>From flower to jar</h3>
+          <div class="gold-rule" aria-hidden="true"><i></i><b></b><i></i></div>
+        </div>
+
+        <ol class="journey-steps">
+          <li class="reveal" style="--d:.04s">
+            <span class="js-hex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><path d="M12 3.6c1.9 0 3 1.3 2.6 3.3 1.7-1 3.4-.6 4.1 1.1.7 1.7-.3 3.1-2.2 3.6 1.9.5 2.9 1.9 2.2 3.6-.7 1.7-2.4 2.1-4.1 1.1.4 2-.7 3.3-2.6 3.3s-3-1.3-2.6-3.3c-1.7 1-3.4.6-4.1-1.1-.7-1.7.3-3.1 2.2-3.6-1.9-.5-2.9-1.9-2.2-3.6.7-1.7 2.4-2.1 4.1-1.1C9 4.9 10.1 3.6 12 3.6z" stroke-linejoin="round"/></svg></span>
+            <h4>1. Flowers Bloom</h4>
+            <p>Bees collect nectar from wildflowers.</p>
+          </li>
+          <li class="reveal" style="--d:.1s">
+            <span class="js-hex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><ellipse cx="13.5" cy="13" rx="5.4" ry="4"/><path d="M10.4 9.7q1.7 3.3 0 6.6M13.6 9.2q1.9 3.8 0 7.6M16.8 10q1.6 3 0 6" stroke-linecap="round"/><circle cx="5.6" cy="12" r="2.9"/><path d="M4 8.6Q1.6 6.4.6 5.4M7.2 7.8Q6.4 5 5 3.6" stroke-linecap="round"/><path d="M11 7.4q3.6-3.4 8-2.4" stroke-linecap="round"/></svg></span>
+            <h4>2. Bees Collect</h4>
+            <p>Nectar is carried back to the hive.</p>
+          </li>
+          <li class="reveal" style="--d:.16s">
+            <span class="js-hex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2.6l4.2 2.4v4.8L12 12.2 7.8 9.8V5L12 2.6zM6.4 11.8l4.2 2.4v4.8l-4.2 2.4-4.2-2.4v-4.8l4.2-2.4zM17.6 11.8l4.2 2.4v4.8l-4.2 2.4-4.2-2.4v-4.8l4.2-2.4z" stroke-linejoin="round"/></svg></span>
+            <h4>3. Honey Made</h4>
+            <p>Bees turn nectar into honey and seal it.</p>
+          </li>
+          <li class="reveal" style="--d:.22s">
+            <span class="js-hex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6.6 20h10.8M6.8 20l-.9-2.9h12.2l-.9 2.9M5.4 14.6h13.2M5.8 14.6l-.8-2.9h14l-.8 2.9M7 8.8h10l.9 2.9H6.1L7 8.8z" stroke-linejoin="round"/><path d="M9.6 8.8V7.5A2.4 2.4 0 0 1 12 5.2a2.4 2.4 0 0 1 2.4 2.3v1.3" stroke-linecap="round"/></svg></span>
+            <h4>4. We Harvest</h4>
+            <p>We harvest in small batches by hand.</p>
+          </li>
+          <li class="reveal" style="--d:.28s">
+            <span class="js-hex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="6.6" y="7.4" width="10.8" height="13" rx="2.8"/><path d="M8.6 7.4V6.2A1.3 1.3 0 0 1 9.9 4.9h4.2a1.3 1.3 0 0 1 1.3 1.3v1.2M6.6 12.6h10.8" stroke-linecap="round"/></svg></span>
+            <h4>5. We Pack</h4>
+            <p>Carefully packed in glass jars.</p>
+          </li>
+          <li class="reveal" style="--d:.34s">
+            <span class="js-hex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2.6 15.6V7.4a1.4 1.4 0 0 1 1.4-1.4h9.6v9.6" stroke-linejoin="round"/><path d="M13.6 9h4.2l3.6 4v2.6h-1.8M2.6 15.6h1.7m3.4 0h4.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="16.8" r="1.9"/><circle cx="17.4" cy="16.8" r="1.9"/></svg></span>
+            <h4>6. Delivered</h4>
+            <p>Delivered fresh to your doorstep.</p>
+          </li>
+        </ol>
+      </div>
+
+      <!-- ===== honeycomb stat cards ===== -->
+      <div class="container">
+        <ul class="hive-stats">
+          <li class="reveal" style="--d:.05s">
+            <span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.6 20h10.8M6.8 20l-.9-2.9h12.2l-.9 2.9M5.4 14.6h13.2M5.8 14.6l-.8-2.9h14l-.8 2.9M7 8.8h10l.9 2.9H6.1L7 8.8z" stroke-linejoin="round"/><path d="M9.6 8.8V7.5A2.4 2.4 0 0 1 12 5.2a2.4 2.4 0 0 1 2.4 2.3v1.3" stroke-linecap="round"/></svg></span>
+            <div><strong data-count="200">0</strong><span>Bee Colonies</span><small>Healthy &amp; thriving</small></div>
+          </li>
+          <li class="reveal" style="--d:.12s">
+            <span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><path d="M12 3.6c1.9 0 3 1.3 2.6 3.3 1.7-1 3.4-.6 4.1 1.1.7 1.7-.3 3.1-2.2 3.6 1.9.5 2.9 1.9 2.2 3.6-.7 1.7-2.4 2.1-4.1 1.1.4 2-.7 3.3-2.6 3.3s-3-1.3-2.6-3.3c-1.7 1-3.4.6-4.1-1.1-.7-1.7.3-3.1 2.2-3.6-1.9-.5-2.9-1.9-2.2-3.6.7-1.7 2.4-2.1 4.1-1.1C9 4.9 10.1 3.6 12 3.6z" stroke-linejoin="round"/></svg></span>
+            <div><strong data-count="12">0</strong><span>Honey Varieties</span><small>Every season</small></div>
+          </li>
+          <li class="reveal" style="--d:.19s">
+            <span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.2 19.5a5.8 5.8 0 0 1 11.6 0" stroke-linecap="round"/><path d="M16 5.6a3.2 3.2 0 0 1 0 5.9M17.6 19.5a5.8 5.8 0 0 0-2.2-4.6" stroke-linecap="round"/></svg></span>
+            <div><strong data-count="38">0</strong><span>Years of Family Beekeeping</span><small>Since 1987</small></div>
+          </li>
+          <li class="reveal" style="--d:.26s">
+            <span class="hs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.7l5.9-.9L12 3.5z" stroke-linejoin="round"/></svg></span>
+            <div><strong>4.9/5</strong><span>Customer Rating</span><small>From 1000+ reviews</small></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- honeycomb illustration, bottom-right -->
+      <svg class="ad-comb-art" viewBox="0 0 260 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="combArtG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFD873"/><stop offset="55%" stop-color="#F2A900"/><stop offset="100%" stop-color="#C9720A"/>
+          </linearGradient>
+          <linearGradient id="combArtDrip" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F7B62A"/><stop offset="100%" stop-color="#D97706"/>
+          </linearGradient>
+        </defs>
+        <g stroke="#A85B06" stroke-width="2.4" stroke-linejoin="round">
+          <path d="M96 44l26 15v30l-26 15-26-15V59l26-15z" fill="url(#combArtG)"/>
+          <path d="M148 44l26 15v30l-26 15-26-15V59l26-15z" fill="url(#combArtG)"/>
+          <path d="M200 44l26 15v30l-26 15-26-15V59l26-15z" fill="url(#combArtG)"/>
+          <path d="M122 90l26 15v30l-26 15-26-15v-30l26-15z" fill="url(#combArtG)"/>
+          <path d="M174 90l26 15v30l-26 15-26-15v-30l26-15z" fill="url(#combArtG)"/>
+          <path d="M226 90l26 15v30l-26 15-26-15v-30l26-15z" fill="url(#combArtG)"/>
+        </g>
+        <g fill="#B4670A" opacity=".45">
+          <path d="M96 60l13 7.5v15L96 90l-13-7.5v-15L96 60zM148 60l13 7.5v15L148 90l-13-7.5v-15L148 60zM200 60l13 7.5v15L200 90l-13-7.5v-15L200 60zM122 106l13 7.5v15L122 136l-13-7.5v-15L122 106zM174 106l13 7.5v15L174 136l-13-7.5v-15L174 106z"/>
+        </g>
+        <path d="M122 136q5 18 0 30 q-5 10 0 16 q6-6 0-16 q5-12 0-30z" fill="url(#combArtDrip)"/>
+        <ellipse cx="174" cy="152" rx="7" ry="9" fill="url(#combArtDrip)"/>
+        <ellipse cx="104" cy="30" rx="9" ry="4" fill="#FFE8A8" opacity=".8" transform="rotate(-18 104 30)"/>
+      </svg>
+    </section>
+
+    <!-- ======= DELIVERY ======= -->
+    <section class="section delivery-lux" id="delivery">
+      <div class="ad-hex-bg ad-hex-bg--left" aria-hidden="true"></div>
+
+      <svg class="ad-bee ad-bee-dl1" viewBox="0 0 140 80" aria-hidden="true">
+        <path d="M136 8 C104 6 92 40 58 46 C36 50 20 60 8 72" fill="none" stroke="#D9A441"
+              stroke-width="1.6" stroke-dasharray="4 6" stroke-linecap="round" opacity=".5"/>
+        <g transform="translate(2 62)">
+          <ellipse cx="12" cy="11" rx="9" ry="6.6" fill="#F2A900"/>
+          <path d="M7.4 5.8q2.3 5.2 0 10.4M12.2 5q2.5 6 0 12M16.8 6.4q2.1 4.6 0 9.2" stroke="#3B2205" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <circle cx="3" cy="9.8" r="4.2" fill="#3B2205"/>
+          <ellipse cx="10" cy="1.8" rx="7.2" ry="3.8" fill="#FFF9E8" opacity=".9" transform="rotate(-16 10 1.8)"/>
+        </g>
+      </svg>
+
+      <svg class="ad-bee ad-bee-dl2" viewBox="0 0 150 100" aria-hidden="true">
+        <path d="M8 12 C44 4 78 26 96 52 C110 72 124 82 142 86 M96 52 C70 60 56 78 60 94" fill="none" stroke="#D9A441"
+              stroke-width="1.6" stroke-dasharray="4 6" stroke-linecap="round" opacity=".5"/>
+        <g transform="translate(0 2)">
+          <ellipse cx="12" cy="11" rx="9" ry="6.6" fill="#F2A900"/>
+          <path d="M7.4 5.8q2.3 5.2 0 10.4M12.2 5q2.5 6 0 12M16.8 6.4q2.1 4.6 0 9.2" stroke="#3B2205" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <circle cx="3" cy="9.8" r="4.2" fill="#3B2205"/>
+          <ellipse cx="10" cy="1.8" rx="7.2" ry="3.8" fill="#FFF9E8" opacity=".9" transform="rotate(-16 10 1.8)"/>
+        </g>
+      </svg>
+
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Delivery</span>
+          <h2>From our hives to your table</h2>
+          <div class="gold-rule" aria-hidden="true"><i></i><b></b><i></i></div>
+          <p>Careful packaging, fast couriers, and honey that arrives<br>exactly as it left the apiary.</p>
+        </div>
+
+        <ol class="dl-steps">
+          <li class="dl-card reveal" style="--d:.04s">
+            <span class="dl-num">01</span>
+            <div class="dl-art">
+              <svg viewBox="0 0 120 110" role="img" aria-label="Wildflowers in bloom with bees">
+                <defs>
+                  <radialGradient id="dlPetal" cx="40%" cy="35%" r="70%">
+                    <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EFE4CE"/>
+                  </radialGradient>
+                </defs>
+                <path d="M40 104V64M60 104V56M80 104V70" stroke="#5E8B3A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                <path d="M40 82q-13-4-16-16 13-1 16 16zM60 74q14-5 17-18-14-1-17 18zM80 88q-11-3-13-13 11-1 13 13z" fill="#6FA544"/>
+                <g>
+                  <g transform="translate(40 58)">
+                    <g fill="url(#dlPetal)" stroke="#D8C9AC" stroke-width="1.2">
+                      <ellipse cx="0" cy="-13" rx="6" ry="11"/><ellipse cx="0" cy="13" rx="6" ry="11"/>
+                      <ellipse cx="-13" cy="0" rx="11" ry="6"/><ellipse cx="13" cy="0" rx="11" ry="6"/>
+                      <ellipse cx="-9" cy="-9" rx="9.5" ry="5.5" transform="rotate(45 -9 -9)"/>
+                      <ellipse cx="9" cy="9" rx="9.5" ry="5.5" transform="rotate(45 9 9)"/>
+                      <ellipse cx="9" cy="-9" rx="9.5" ry="5.5" transform="rotate(-45 9 -9)"/>
+                      <ellipse cx="-9" cy="9" rx="9.5" ry="5.5" transform="rotate(-45 -9 9)"/>
+                    </g>
+                    <circle cx="0" cy="0" r="6.4" fill="#F2A900"/>
+                  </g>
+                  <g transform="translate(78 66) scale(.82)">
+                    <g fill="url(#dlPetal)" stroke="#D8C9AC" stroke-width="1.4">
+                      <ellipse cx="0" cy="-13" rx="6" ry="11"/><ellipse cx="0" cy="13" rx="6" ry="11"/>
+                      <ellipse cx="-13" cy="0" rx="11" ry="6"/><ellipse cx="13" cy="0" rx="11" ry="6"/>
+                      <ellipse cx="-9" cy="-9" rx="9.5" ry="5.5" transform="rotate(45 -9 -9)"/>
+                      <ellipse cx="9" cy="9" rx="9.5" ry="5.5" transform="rotate(45 9 9)"/>
+                    </g>
+                    <circle cx="0" cy="0" r="6.4" fill="#F2A900"/>
+                  </g>
+                  <g transform="translate(60 48)">
+                    <g fill="url(#dlPetal)" stroke="#D8C9AC" stroke-width="1.2">
+                      <ellipse cx="0" cy="-14" rx="6.5" ry="12"/><ellipse cx="0" cy="14" rx="6.5" ry="12"/>
+                      <ellipse cx="-14" cy="0" rx="12" ry="6.5"/><ellipse cx="14" cy="0" rx="12" ry="6.5"/>
+                      <ellipse cx="-10" cy="-10" rx="10" ry="6" transform="rotate(45 -10 -10)"/>
+                      <ellipse cx="10" cy="10" rx="10" ry="6" transform="rotate(45 10 10)"/>
+                      <ellipse cx="10" cy="-10" rx="10" ry="6" transform="rotate(-45 10 -10)"/>
+                      <ellipse cx="-10" cy="10" rx="10" ry="6" transform="rotate(-45 -10 10)"/>
+                    </g>
+                    <circle cx="0" cy="0" r="7" fill="#F2A900"/>
+                  </g>
+                </g>
+                <g transform="translate(24 24)">
+                  <ellipse cx="10" cy="9" rx="8" ry="5.8" fill="#F2A900"/>
+                  <path d="M6 4.6q2 4.6 0 9M10 4q2.2 5.2 0 10.4M14 5.2q1.8 4 0 8" stroke="#3B2205" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+                  <circle cx="2" cy="8" r="3.7" fill="#3B2205"/>
+                  <ellipse cx="8.4" cy="1.6" rx="6.4" ry="3.4" fill="#FFF9E8" opacity=".92" transform="rotate(-16 8.4 1.6)"/>
+                </g>
+                <g transform="translate(84 22) scale(.85)">
+                  <ellipse cx="10" cy="9" rx="8" ry="5.8" fill="#F2A900"/>
+                  <path d="M6 4.6q2 4.6 0 9M10 4q2.2 5.2 0 10.4M14 5.2q1.8 4 0 8" stroke="#3B2205" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+                  <circle cx="2" cy="8" r="3.7" fill="#3B2205"/>
+                  <ellipse cx="8.4" cy="1.6" rx="6.4" ry="3.4" fill="#FFF9E8" opacity=".92" transform="rotate(-16 8.4 1.6)"/>
+                </g>
+              </svg>
+            </div>
+            <h3>Flowers Bloom</h3>
+            <p>Bees collect nectar from wildflowers in natural meadows.</p>
+          </li>
+
+          <li class="dl-card reveal" style="--d:.1s">
+            <span class="dl-num">02</span>
+            <div class="dl-art">
+              <svg viewBox="0 0 120 110" role="img" aria-label="Wooden beehive boxes with bees">
+                <defs>
+                  <linearGradient id="dlWood" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#E3B978"/><stop offset="45%" stop-color="#D2A05C"/><stop offset="100%" stop-color="#B07E3C"/>
+                  </linearGradient>
+                  <linearGradient id="dlWoodTop" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#EFCB92"/><stop offset="100%" stop-color="#C99451"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="60" cy="101" rx="40" ry="5" fill="#C9A063" opacity=".35"/>
+                <path d="M26 30h68l-7-9H33l-7 9z" fill="url(#dlWoodTop)" stroke="#94682C" stroke-width="1.6" stroke-linejoin="round"/>
+                <rect x="30" y="30" width="60" height="20" rx="2" fill="url(#dlWood)" stroke="#94682C" stroke-width="1.6"/>
+                <rect x="28" y="50" width="64" height="21" rx="2" fill="url(#dlWood)" stroke="#94682C" stroke-width="1.6"/>
+                <rect x="26" y="71" width="68" height="22" rx="2" fill="url(#dlWood)" stroke="#94682C" stroke-width="1.6"/>
+                <rect x="34" y="93" width="52" height="6" rx="2" fill="#B07E3C" stroke="#94682C" stroke-width="1.4"/>
+                <g fill="#8A5A16" opacity=".5">
+                  <rect x="38" y="36" width="44" height="2.6" rx="1.3"/>
+                  <rect x="36" y="57" width="48" height="2.6" rx="1.3"/>
+                  <rect x="34" y="78" width="52" height="2.6" rx="1.3"/>
+                </g>
+                <rect x="50" y="85" width="20" height="5" rx="2.5" fill="#5E3D10"/>
+                <g transform="translate(16 16)">
+                  <ellipse cx="9" cy="8" rx="7.4" ry="5.4" fill="#F2A900"/>
+                  <path d="M5.4 4.2q1.9 4.2 0 8.4M9.2 3.6q2 4.8 0 9.6M13 4.8q1.7 3.6 0 7.2" stroke="#3B2205" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <circle cx="1.6" cy="7.2" r="3.4" fill="#3B2205"/>
+                  <ellipse cx="7.6" cy="1.4" rx="6" ry="3.2" fill="#FFF9E8" opacity=".92" transform="rotate(-16 7.6 1.4)"/>
+                </g>
+                <g transform="translate(88 30) scale(.9)">
+                  <ellipse cx="9" cy="8" rx="7.4" ry="5.4" fill="#F2A900"/>
+                  <path d="M5.4 4.2q1.9 4.2 0 8.4M9.2 3.6q2 4.8 0 9.6M13 4.8q1.7 3.6 0 7.2" stroke="#3B2205" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <circle cx="1.6" cy="7.2" r="3.4" fill="#3B2205"/>
+                  <ellipse cx="7.6" cy="1.4" rx="6" ry="3.2" fill="#FFF9E8" opacity=".92" transform="rotate(-16 7.6 1.4)"/>
+                </g>
+                <g transform="translate(78 8) scale(.75)">
+                  <ellipse cx="9" cy="8" rx="7.4" ry="5.4" fill="#F2A900"/>
+                  <path d="M5.4 4.2q1.9 4.2 0 8.4M9.2 3.6q2 4.8 0 9.6M13 4.8q1.7 3.6 0 7.2" stroke="#3B2205" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <circle cx="1.6" cy="7.2" r="3.4" fill="#3B2205"/>
+                  <ellipse cx="7.6" cy="1.4" rx="6" ry="3.2" fill="#FFF9E8" opacity=".92" transform="rotate(-16 7.6 1.4)"/>
+                </g>
+              </svg>
+            </div>
+            <h3>Bees Collect</h3>
+            <p>Nectar is carefully carried back to the hive.</p>
+          </li>
+
+          <li class="dl-card reveal" style="--d:.16s">
+            <span class="dl-num">03</span>
+            <div class="dl-art">
+              <svg viewBox="0 0 120 110" role="img" aria-label="Golden honeycomb dripping with honey">
+                <defs>
+                  <linearGradient id="dlComb" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#FFD873"/><stop offset="55%" stop-color="#F2A900"/><stop offset="100%" stop-color="#C9720A"/>
+                  </linearGradient>
+                  <linearGradient id="dlHoney" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#F7B62A"/><stop offset="100%" stop-color="#D97706"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="60" cy="96" rx="34" ry="6" fill="#E8A93A" opacity=".35"/>
+                <path d="M60 74q22 4 26 12 0 8-26 10-26-2-26-10 4-8 26-12z" fill="url(#dlHoney)"/>
+                <g stroke="#A85B06" stroke-width="2.2" stroke-linejoin="round">
+                  <path d="M42 22l14 8v16l-14 8-14-8V30l14-8z" fill="url(#dlComb)"/>
+                  <path d="M70 22l14 8v16l-14 8-14-8V30l14-8z" fill="url(#dlComb)"/>
+                  <path d="M56 46l14 8v16l-14 8-14-8V54l14-8z" fill="url(#dlComb)"/>
+                  <path d="M84 46l14 8v16l-14 8-14-8V54l14-8z" fill="url(#dlComb)"/>
+                  <path d="M28 46l14 8v16l-14 8-14-8V54l14-8z" fill="url(#dlComb)"/>
+                </g>
+                <g fill="#B4670A" opacity=".42">
+                  <path d="M42 30l7 4v8l-7 4-7-4v-8l7-4zM70 30l7 4v8l-7 4-7-4v-8l7-4zM56 54l7 4v8l-7 4-7-4v-8l7-4zM84 54l7 4v8l-7 4-7-4v-8l7-4zM28 54l7 4v8l-7 4-7-4v-8l7-4z"/>
+                </g>
+                <path d="M42 78q4 10 0 16 -4 6 0 10 4-4 0-10 4-6 0-16z" fill="url(#dlHoney)"/>
+                <ellipse cx="86" cy="86" rx="5" ry="6.4" fill="url(#dlHoney)"/>
+                <ellipse cx="48" cy="16" rx="8" ry="3.6" fill="#FFE8A8" opacity=".75" transform="rotate(-18 48 16)"/>
+              </svg>
+            </div>
+            <h3>Honey Made</h3>
+            <p>Bees turn nectar into honey and seal it with care.</p>
+          </li>
+
+          <li class="dl-card reveal" style="--d:.22s">
+            <span class="dl-num">04</span>
+            <div class="dl-art">
+              <svg viewBox="0 0 120 110" role="img" aria-label="Glass honey jar with a cloth lid and gift tag">
+                <defs>
+                  <linearGradient id="dlJarH" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#F7C247"/><stop offset="40%" stop-color="#EFA714"/><stop offset="100%" stop-color="#C87F09"/>
+                  </linearGradient>
+                  <linearGradient id="dlCloth" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#F0E0C0"/><stop offset="100%" stop-color="#D4BE94"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="60" cy="99" rx="30" ry="5" fill="#C9A063" opacity=".3"/>
+                <path d="M38 44q-4 5-4 12v34q0 8 8 8h36q8 0 8-8V56q0-7-4-12z" fill="url(#dlJarH)" stroke="#B4670A" stroke-width="2"/>
+                <path d="M40 52q8 4 16 1t20 2v40q0 5-5 5H45q-5 0-5-5z" fill="#E89A05" opacity=".45"/>
+                <path d="M42 60q3 22 1 32" stroke="#FFE7A6" stroke-width="4" stroke-linecap="round" opacity=".5" fill="none"/>
+                <path d="M36 40q6-5 24-5t24 5q2 5-4 6H40q-6-1-4-6z" fill="url(#dlCloth)" stroke="#B49868" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M40 46h40" stroke="#A88B5A" stroke-width="3" stroke-linecap="round"/>
+                <path d="M40 46q10 4 20 0t20 0" stroke="#8A6E42" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <g transform="rotate(14 88 56)">
+                  <path d="M82 50h16v14H82z" fill="#F5E7C8" stroke="#B49868" stroke-width="1.5"/>
+                  <path d="M85 54h10M85 58h7" stroke="#B08A47" stroke-width="1.6" stroke-linecap="round"/>
+                </g>
+                <path d="M80 48q4 3 4 6" stroke="#A88B5A" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+                <ellipse cx="48" cy="30" rx="8" ry="3.4" fill="#FFF3D0" opacity=".65" transform="rotate(-16 48 30)"/>
+              </svg>
+            </div>
+            <h3>We Harvest</h3>
+            <p>We harvest in small batches by hand with love.</p>
+          </li>
+
+          <li class="dl-card reveal" style="--d:.28s">
+            <span class="dl-num">05</span>
+            <div class="dl-art">
+              <svg viewBox="0 0 120 110" role="img" aria-label="Golden Hive shipping box tied with twine">
+                <defs>
+                  <linearGradient id="dlBoxF" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#E0BC8A"/><stop offset="60%" stop-color="#CFA469"/><stop offset="100%" stop-color="#B78749"/>
+                  </linearGradient>
+                  <linearGradient id="dlBoxT" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#EED4A6"/><stop offset="100%" stop-color="#CFA76E"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="60" cy="98" rx="34" ry="5" fill="#C9A063" opacity=".3"/>
+                <path d="M22 38l38-12 38 12-38 11z" fill="url(#dlBoxT)" stroke="#94682C" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M22 38v42l38 14V49z" fill="url(#dlBoxF)" stroke="#94682C" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M98 38v42L60 94V49z" fill="#B78B52" stroke="#94682C" stroke-width="1.8" stroke-linejoin="round"/>
+                <rect x="32" y="56" width="34" height="20" rx="3" fill="#FFF6E3" opacity=".92" transform="skewY(11)"/>
+                <g transform="skewY(11)">
+                  <path d="M45 63l5 3v6l-5 3-5-3v-6l5-3z" fill="none" stroke="#B4670A" stroke-width="1.6"/>
+                  <path d="M42.6 66.5h4.8M42.4 69h5.2M43.4 71.4h3.6" stroke="#B4670A" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M53 65h10M53 69h8" stroke="#8A5A16" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M53 73h12" stroke="#C9A063" stroke-width="1.3" stroke-linecap="round"/>
+                </g>
+                <path d="M60 26v68" stroke="#C0B49B" stroke-width="2.6" opacity=".9"/>
+                <path d="M22 38l38 11 38-12" stroke="#C0B49B" stroke-width="2.6" fill="none" opacity=".9"/>
+                <path d="M56 24q4-8 9-4t-5 6q-6-2-9 3z" fill="#D8CCB2"/>
+              </svg>
+            </div>
+            <h3>We Pack</h3>
+            <p>Carefully packed in glass jars with premium protection.</p>
+          </li>
+
+          <li class="dl-card reveal" style="--d:.34s">
+            <span class="dl-num">06</span>
+            <div class="dl-art">
+              <svg viewBox="0 0 120 110" role="img" aria-label="Golden Hive delivery truck">
+                <defs>
+                  <linearGradient id="dlTruckB" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFFDF6"/><stop offset="100%" stop-color="#E4D6BC"/>
+                  </linearGradient>
+                  <linearGradient id="dlCab" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#F4E3C2"/><stop offset="100%" stop-color="#D3BC94"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="60" cy="94" rx="40" ry="5" fill="#C9A063" opacity=".3"/>
+                <rect x="14" y="36" width="54" height="42" rx="4" fill="url(#dlTruckB)" stroke="#A88B5A" stroke-width="2"/>
+                <path d="M68 48h14l14 14v16H68z" fill="url(#dlCab)" stroke="#A88B5A" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M71 51h10l10 10H71z" fill="#BFD8E6" stroke="#A88B5A" stroke-width="1.6" stroke-linejoin="round"/>
+                <rect x="10" y="72" width="94" height="7" rx="3" fill="#C9A063" opacity=".5"/>
+                <g transform="translate(30 44)">
+                  <path d="M11 2l7 4v8l-7 4-7-4V6l7-4z" fill="none" stroke="#B4670A" stroke-width="2"/>
+                  <path d="M7.6 7h6.8M7.4 10.2h7.2M8.6 13.2h4.8" stroke="#B4670A" stroke-width="1.5" stroke-linecap="round"/>
+                </g>
+                <path d="M46 50h16M46 56h12" stroke="#8A5A16" stroke-width="2" stroke-linecap="round"/>
+                <path d="M46 62h18" stroke="#C9A063" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="30" cy="80" r="10" fill="#3B2205"/><circle cx="30" cy="80" r="4.6" fill="#C9A063"/>
+                <circle cx="84" cy="80" r="10" fill="#3B2205"/><circle cx="84" cy="80" r="4.6" fill="#C9A063"/>
+                <path d="M6 44h12M2 54h10M8 64h10" stroke="#E0C98F" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
+              </svg>
+            </div>
+            <h3>Delivered</h3>
+            <p>Delivered fresh to your doorstep in 2-4 days.</p>
+          </li>
+        </ol>
+      </div>
+
+      <!-- golden wave divider with hexagon bee -->
+      <div class="dl-divider reveal" aria-hidden="true">
+        <svg class="dl-divider-wave" viewBox="0 0 1200 40" preserveAspectRatio="none">
+          <path d="M0 22 C150 4 250 36 400 24 C520 14 560 30 600 30 C640 30 680 14 800 24 C950 36 1050 4 1200 20"
+                fill="none" stroke="#E7B84B" stroke-width="2.4" stroke-linecap="round" opacity=".85"/>
+          <path d="M0 28 C150 12 250 42 400 30 C520 20 560 36 600 36 C640 36 680 20 800 30 C950 42 1050 12 1200 26"
+                fill="none" stroke="#F2A900" stroke-width="1.4" stroke-linecap="round" opacity=".4"/>
+        </svg>
+        <span class="dl-divider-hex">
+          <svg viewBox="0 0 24 18" aria-hidden="true">
+            <ellipse cx="13" cy="10" rx="6.4" ry="4.7" fill="#F2A900"/>
+            <path d="M9.4 5.8q1.7 4.1 0 8.2M13 5.2q1.9 4.7 0 9.4M16.6 6.3q1.6 3.6 0 7.2" stroke="#3B2205" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+            <circle cx="5.2" cy="8.8" r="3" fill="#3B2205"/>
+            <path d="M3.6 5.4Q1.4 3.6.4 3.2M6.6 4.4Q6 2.2 4.8 1.2" stroke="#3B2205" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <ellipse cx="11.4" cy="3.4" rx="5.4" ry="2.8" fill="#FFF9E8" opacity=".95" transform="rotate(-16 11.4 3.4)"/>
+          </svg>
+        </span>
+      </div>
+
+      <!-- trust badges -->
+      <div class="container">
+        <ul class="dl-trust reveal">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3l7.5 3v5.6c0 4.6-3.1 7.9-7.5 9.4-4.4-1.5-7.5-4.8-7.5-9.4V6L12 3z" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.2-4.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Secure Packaging</strong><small>Leak-proof &amp; break-proof premium jars</small></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2.6 15.6V8.4a1.4 1.4 0 0 1 1.4-1.4h9.6v9.6" stroke-linejoin="round"/><path d="M13.6 10h4.2l3.6 4v2.6h-1.8M8 16.6h3.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="17" r="1.9"/><circle cx="17.4" cy="17" r="1.9"/><path d="M1 9.6h4M.2 12.4h3.4" stroke-linecap="round"/></svg>
+            <div><strong>Fast Shipping</strong><small>Nationwide delivery in 2-4 days</small></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10 13.6V5.4a2 2 0 1 1 4 0v8.2a4.2 4.2 0 1 1-4 0z" stroke-linejoin="round"/><path d="M12 9.4v5.2" stroke-linecap="round"/></svg>
+            <div><strong>No Heat Processed</strong><small>Raw &amp; unfiltered, never heated</small></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 4c-9 0-14 5-14 11 0 2.5 1.5 5 1.5 5S9 21 12 21c6 0 8-6 8-17z" stroke-linejoin="round"/><path d="M6.5 19.5C9 14 13 10.5 17 8.5" stroke-linecap="round"/></svg>
+            <div><strong>100% Natural</strong><small>No additives, fillers or preservatives</small></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20.4S3.6 15.4 3.6 9.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.4 2.6c0 5.8-8.4 10.8-8.4 10.8z" stroke-linejoin="round"/></svg>
+            <div><strong>Satisfaction Guarantee</strong><small>Love it or we'll make it right</small></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= REVIEWS ======= -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Reviews</span>
+          <h2>What our customers say</h2>
+        </div>
+        <div class="review-slider reveal" id="reviewSlider">
+          <div class="review-track" id="reviewTrack">
+            <blockquote class="review-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"The cedar nut honey is unlike anything I've tasted — silky, piney, not too sweet. My whole family is hooked and we reorder every month."</p>
+              <footer><span class="avatar" style="--av:#F2A900">EM</span><div><strong>Emily Matthews</strong><small>Portland — Cedar Nut Honey</small></div></footer>
+            </blockquote>
+            <blockquote class="review-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"You can tell it's genuinely raw. It crystallized naturally after a few weeks exactly like honey from my grandfather's hives used to."</p>
+              <footer><span class="avatar" style="--av:#C97B12">JR</span><div><strong>James Reeves</strong><small>Austin — Buckwheat Honey</small></div></footer>
+            </blockquote>
+            <blockquote class="review-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"Beautiful packaging, arrived in two days, and the linden honey melted straight into my evening tea. Ordering gift sets for the holidays."</p>
+              <footer><span class="avatar" style="--av:#8A5A16">SK</span><div><strong>Sofia Klein</strong><small>Chicago — Linden Honey</small></div></footer>
+            </blockquote>
+            <blockquote class="review-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <p>"I toured the apiary last summer — the care these folks put into their bees shows up in every single jar. Honest honey, honest people."</p>
+              <footer><span class="avatar" style="--av:#DB8A0F">MB</span><div><strong>Marcus Bell</strong><small>Denver — Wildflower Honey</small></div></footer>
+            </blockquote>
+          </div>
+          <div class="slider-nav">
+            <button id="revPrev" aria-label="Previous review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button id="revNext" aria-label="Next review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CONTACTS ======= -->
+    <section class="section contacts" id="contacts">
+      <div class="container contacts-grid">
+        <div class="contacts-info">
+          <span class="eyebrow reveal">Contacts</span>
+          <h2 class="reveal">Come taste it<br>for yourself</h2>
+          <ul class="contact-list">
+            <li class="reveal"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><strong>Farm shop &amp; apiary</strong><small>14 Meadowbrook Lane, Willow Creek Valley</small></div></li>
+            <li class="reveal"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.27a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2.02z"/></svg></span><div><strong>+1 (555) 010-4664</strong><small>Daily, 9:00 — 19:00</small></div></li>
+            <li class="reveal"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7L22 7"/></svg></span><div><strong>hello@goldenhive.farm</strong><small>We reply within one business day</small></div></li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal-scale" id="orderForm" novalidate>
+          <h3>Request a call back</h3>
+          <p class="form-note">Leave your details and we'll help you pick the perfect honey.</p>
+          <div class="field">
+            <label for="fName">Your name <span aria-hidden="true">*</span></label>
+            <input type="text" id="fName" name="name" autocomplete="name" required placeholder="Jane Smith">
+            <small class="field-error" id="errName" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="fPhone">Phone number <span aria-hidden="true">*</span></label>
+            <input type="tel" id="fPhone" name="phone" autocomplete="tel" required placeholder="+1 (555) 000-0000">
+            <small class="field-error" id="errPhone" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="fMsg">Message <span class="opt">(optional)</span></label>
+            <textarea id="fMsg" name="message" rows="3" placeholder="I'd love to try the cedar nut honey…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-honey btn-block" id="formSubmit">Send request</button>
+          <p class="form-success" id="formSuccess" hidden>✓ Thank you! We'll call you back shortly.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#top" class="brand footer-brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M24 6l14 8v16l-14 8-14-8V14l14-8z" stroke="#F2A900" stroke-width="2.6" stroke-linejoin="round"/>
+          <path d="M24 14c3.6 0 6 2.6 6 6.4 0 5-3.8 8.6-6 10.6-2.2-2-6-5.6-6-10.6 0-3.8 2.4-6.4 6-6.4z" fill="#F2A900"/>
+          <path d="M19.3 19h9.4M18.9 23.4h10.2M20.4 27.6h7.2" stroke="#241503" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text"><strong>Golden</strong> Hive<small>private apiary</small></span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#catalog">Catalog</a><a href="#about">About us</a><a href="#delivery">Delivery</a><a href="#reviews">Reviews</a><a href="#contacts">Contacts</a>
+      </nav>
+      <p class="footer-copy">© 2026 Golden Hive Apiary. Made with patience and around forty thousand bees.
+        <a href="admin-panel/index.html" class="footer-admin-link">Admin</a></p>
+    </div>
+  </footer>
+
+  <!-- ======= REALISTIC BEES LAYER ======= -->
+  <div class="bee-layer" id="beeLayer" aria-hidden="true"></div>
+
+  <!-- ======= WHATSAPP FLOATING BUTTON ======= -->
+  <a class="whatsapp-fab"
+     href="https://wa.me/15550104664?text=Hi%20Golden%20Hive!%20I%27d%20like%20to%20ask%20about%20your%20honey."
+     target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path fill="currentColor" d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.23.6 4.35 1.74 6.22L4 29l7.94-1.68a12.9 12.9 0 0 0 4.08.66h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3z" opacity=".18"/>
+      <path fill="currentColor" d="M16.02 4.6c-5.75 0-10.42 4.67-10.42 10.42 0 2.03.58 3.94 1.6 5.55l.25.4-1.06 3.87 3.97-1.04.38.23a10.35 10.35 0 0 0 5.28 1.44h.01c5.75 0 10.42-4.67 10.42-10.42S21.77 4.6 16.02 4.6z"/>
+      <path fill="#FFF" d="M12.2 9.9c-.25-.55-.5-.56-.73-.57l-.63-.01c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.71s1.17 3.14 1.33 3.36c.16.22 2.27 3.64 5.6 4.96 2.77 1.1 3.34.88 3.94.82.6-.06 1.94-.79 2.21-1.55.27-.77.27-1.42.19-1.56-.08-.14-.3-.22-.63-.38-.32-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.73.16-.22.32-.84 1.06-1.03 1.28-.19.22-.38.24-.7.08-.32-.16-1.36-.5-2.6-1.6-.96-.86-1.6-1.92-1.79-2.24-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.56-.08-.16-.7-1.76-1-2.4z"/>
+    </svg>
+  </a>
+
+  <!-- async (not defer): GSAP is only used for optional hero flourishes.
+       On defer it would block products.js/bees.js/main.js/hero-lux.js from
+       running until this third-party request finished — a real source of
+       page-load lag. async lets our own scripts run immediately. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" async></script>
+  <script src="js/products.js?v=9" defer></script>
+  <script src="js/bees.js?v=9" defer></script>
+  <script src="js/main.js?v=9" defer></script>
+  <script src="js/hero-lux.js?v=9" defer></script>
+  <noscript>
+    <style>[data-hero-up] { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
+</body>
+</html>
